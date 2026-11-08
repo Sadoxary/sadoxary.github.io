@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Liza Lomakina — environment and level artist in Unreal Engine 5. Portfolio: Encapsulation, Fragroom VR arenas, Open-Pit Mine, Sky Pirates.">
+<meta property="og:title" content="Liza Lomakina — Environment & Level Artist">
+<meta property="og:image" content="img/enc_02.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Liza Lomakina Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;500&family=Old+Standard+TT:wght@400&family=Oswald:wght@700&family=Russo+One&family=Jura:wght@700&family=Poiret+One&family=Kelly+Slab&family=Cormorant:ital,wght@1,700&display=swap">
+<style>
+/* Layout: home is a dark "viewport"; each project page swaps the whole token set to its own world (horror, quarry, desert, neon, deco, sky, ink). */
+:root{
+  --bg:#0c0e11; --surface:#14171c; --line:#242931; --fg:#e9e6df; --muted:#8d939c;
+  --accent:#e6a34f; --accent-ink:#1a1206;
+  --display:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --h-transform:uppercase; --h-weight:900; --h-spacing:-.01em;
+  --gutter:max(16px,env(safe-area-inset-left,0px)); --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --maxw:1240px; --bgimg:none;
+  color-scheme:dark;
+}
+/* project worlds */
+body[data-p="encapsulation"]{--bg:#0a0c10;--surface:#11141a;--line:#22262e;--fg:#dcdde2;--muted:#7f8590;--accent:#c8342b;--accent-ink:#fff;--display:"Old Standard TT",Georgia,serif;--h-transform:uppercase;--h-weight:400;--h-spacing:.14em;
+  --bgimg:radial-gradient(ellipse at 50% -10%,rgba(80,110,170,.18),transparent 60%)}
+body[data-p="open-pit-mine"]{--bg:#16171a;--surface:#1e2024;--line:#33363c;--fg:#e4e2dd;--muted:#9a9a96;--accent:#f2c21b;--accent-ink:#151515;--display:"Oswald","Arial Narrow",sans-serif;--h-weight:700;--h-spacing:.02em}
+body[data-p="fragroom-desert"]{--bg:#1b1511;--surface:#241c16;--line:#3a2e24;--fg:#f1e3cf;--muted:#b09a80;--accent:#e08a3c;--accent-ink:#1b1511;--display:"Russo One",sans-serif;--h-weight:400;--h-spacing:.03em;
+  --bgimg:linear-gradient(180deg,rgba(224,138,60,.10),transparent 420px)}
+body[data-p="fragroom-scifi"]{--bg:#05070d;--surface:#0b0f1a;--line:#1a2338;--fg:#dbe8ff;--muted:#7a8bb0;--accent:#38e0ff;--accent-ink:#04121a;--display:"Jura",sans-serif;--h-weight:700;--h-spacing:.12em;
+  --bgimg:linear-gradient(rgba(56,224,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(56,224,255,.05) 1px,transparent 1px)}
+body[data-p="fragroom-art-deco"]{--bg:#0d1416;--surface:#132024;--line:#2c3b3a;--fg:#efe6d2;--muted:#a6a08e;--accent:#d4af5a;--accent-ink:#0d1416;--display:"Poiret One",Georgia,serif;--h-weight:400;--h-spacing:.18em}
+body[data-p="sky-pirates"]{--bg:#1a2233;--surface:#222c40;--line:#36435e;--fg:#fbefe6;--muted:#c2b4b8;--accent:#ff8f7a;--accent-ink:#1a2233;--display:"Kelly Slab",Georgia,serif;--h-transform:none;--h-weight:400;--h-spacing:.01em;
+  --bgimg:linear-gradient(180deg,#e8a3a0 0,#9b7fa3 180px,#1a2233 520px)}
+body[data-p="sketches"]{--bg:#2c2b29;--surface:#353431;--line:#47453f;--fg:#ece6da;--muted:#a8a091;--accent:#d24a3e;--accent-ink:#fff;--display:"Cormorant",Georgia,serif;--h-transform:none;--h-weight:700;--h-spacing:.01em;
+  --bgimg:radial-gradient(ellipse at 85% 0,rgba(210,74,62,.10),transparent 50%)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);background-image:var(--bgimg);background-repeat:no-repeat;color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background-color .3s}
+body[data-p="fragroom-scifi"]{background-repeat:repeat;background-size:48px 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);font-variant-numeric:tabular-nums}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px;flex-wrap:wrap}
+.brand{font-family:"Golos Text",system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.brand span{color:var(--accent)}
+.right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:4px 9px;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* hero */
+.hero{position:relative;border-bottom:1px solid var(--line)}
+.hero-img{width:100%;height:clamp(300px,52vw,620px);object-fit:cover;object-position:50% 60%}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,var(--bg) 100%)}
+.hero-copy{position:absolute;inset:auto 0 0}
+.hero-copy .wrap{padding-block:0 32px;display:grid;gap:14px}
+.hero h1{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(30px,6.4vw,80px);line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+.hero .role{margin:0;font-size:clamp(16px,2vw,20px);max-width:48ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border:1px solid var(--line);border-radius:2px;color:var(--muted);background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.chip.on{border-color:var(--accent);color:var(--accent)}
+.frame-tag{position:absolute;top:14px;right:var(--gutter-r);font-family:var(--mono);font-size:11px;opacity:.75;background:color-mix(in srgb,var(--bg) 60%,transparent);padding:4px 8px}
+
+section{padding-block:56px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+h2{margin:0;font-family:var(--display);font-weight:var(--h-weight);letter-spacing:var(--h-spacing);text-transform:var(--h-transform);font-size:clamp(22px,3.2vw,34px);line-height:1.1;text-wrap:balance}
+
+/* work grid — each card previews its project's own type and accent */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{grid-column:span 6;position:relative;display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.card.wide{grid-column:span 12}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease}
+.card.wide img{aspect-ratio:21/9}
+.card:hover img{transform:scale(1.025)}
+.card .meta{display:grid;gap:4px;padding:14px 16px 16px;border-top:2px solid var(--c)}
+.card h3{margin:0;font-family:var(--body);font-weight:600;font-size:20px;line-height:1.25}
+.card.wide h3{font-size:clamp(24px,2.8vw,32px)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.card .idx{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:11px;background:color-mix(in srgb,var(--bg) 65%,transparent);padding:3px 7px}
+@media (max-width:860px){.card{grid-column:span 12}.card.wide img{aspect-ratio:16/9}}
+
+/* case study */
+.case{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.case-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
+.scale{display:grid;gap:18px}
+.stat{display:grid;gap:2px}
+.stat b{font-family:var(--display);font-weight:900;font-size:clamp(40px,5.4vw,64px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:14px}
+.ruler{display:grid;gap:6px}
+.ruler .bar{height:8px;background:var(--line);position:relative}
+.ruler .bar i{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.lead{font-size:18px;max-width:58ch;margin:0 0 20px}
+.issues{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.issues li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.issues .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-top:4px}
+.issues p{margin:0;max-width:62ch}
+.note{margin-top:18px;color:var(--muted);font-size:14px;max-width:62ch}
+@media (max-width:860px){.case-grid{grid-template-columns:minmax(0,1fr)}.issues li{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+.now{padding-block:8px 24px;display:grid;gap:14px}
+.nda-note{margin:0 0 18px;padding:12px 16px;border:1px dashed var(--accent);color:var(--fg);max-width:64ch}
+.nda-cover{aspect-ratio:21/4;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 28px;
+  background:repeating-radial-gradient(ellipse at 30% 120%,transparent 0 18px,color-mix(in srgb,var(--accent) 22%,transparent) 18px 19px),var(--surface)}
+.nda-cover span{font-family:var(--display);font-weight:900;font-size:clamp(36px,7vw,88px);color:var(--accent);letter-spacing:.04em}
+.nda-cover em{font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.nda-cover{aspect-ratio:16/6}}
+.now h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(18px,2.2vw,24px);text-transform:uppercase;text-wrap:balance}
+.now .lead{margin:0 0 10px}
+.ps-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding-top:6px}
+.ps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ps li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ps strong{display:block;font-weight:600;margin-bottom:4px}
+.ps p{margin:0;color:var(--muted)}
+.ps .sol{color:var(--fg);padding-left:16px;border-left:2px solid var(--accent)}
+@media (max-width:860px){.ps-head{display:none}.ps li{grid-template-columns:minmax(0,1fr);gap:10px}}
+.about-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px}
+.about-grid p{margin:0 0 14px;max-width:62ch}
+.kv{display:grid;margin:0;border-top:1px solid var(--line)}
+.kv div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.kv dt,.kv dd{margin:0}
+.contact-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.contact-row .label{width:90px}
+.copy{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--accent);border:1px solid var(--accent);padding:4px 8px;cursor:pointer;border-radius:2px}
+.copy:hover{background:var(--accent);color:var(--accent-ink)}
+.sel{user-select:all;font-family:var(--mono);font-size:14px}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+.links a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+@media (max-width:860px){.about-grid{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* project page */
+.proj-head{padding-block:44px 30px;display:grid;gap:18px}
+.back{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;width:max-content}
+.back:hover{color:var(--fg)}
+.proj-head h1{margin:0;font-family:var(--display);font-weight:var(--h-weight);letter-spacing:var(--h-spacing);text-transform:var(--h-transform);font-size:clamp(32px,5.6vw,68px);line-height:1.02;text-wrap:balance}
+.proj-head h1 small{display:block;font-family:var(--body);font-size:.32em;letter-spacing:.02em;text-transform:none;font-weight:400;color:var(--muted);margin-top:8px}
+.route{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.route li{display:flex;align-items:center}
+.route li+li::before{content:"→";color:var(--accent);margin:0 10px}
+.route li:last-child{color:var(--accent)}
+.proj-info{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px}
+.proj-info p{margin:0 0 12px;max-width:64ch}
+.ext{text-decoration:none;border-bottom:1px solid var(--accent);font-family:var(--mono);font-size:13px}
+@media (max-width:860px){.proj-info{grid-template-columns:minmax(0,1fr);gap:20px}}
+.shots{display:grid;gap:var(--shot-gap,0px)}
+.shot{all:unset;cursor:zoom-in;display:block;min-width:0}
+.shot:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.shot img{width:100%;height:auto}
+.pair{display:flex;gap:var(--shot-gap,0px)}
+.video{position:relative;aspect-ratio:16/9;max-width:100%;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-link{display:block;text-align:center;text-decoration:none;padding:36px 16px;border:1px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:14px;letter-spacing:.06em;margin-bottom:24px}
+.video-link:hover{background:var(--accent);color:var(--accent-ink)}
+.pair .shot{flex:1.78 1 0}
+@media (max-width:640px){.pair{flex-direction:column}.pair .shot{flex:none}}
+.chapter{padding-block:48px 26px;text-align:center;display:grid;gap:10px;justify-items:center}
+.chapter .num{font-family:var(--display);color:var(--accent);font-size:15px;letter-spacing:.3em}
+.chapter h2{font-size:clamp(24px,3.4vw,38px)}
+.chapter p{margin:0;color:var(--muted);max-width:58ch;padding-inline:16px}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-block:44px}
+.pager a{display:grid;gap:4px;text-decoration:none;padding:16px;border:1px solid var(--line);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}
+.pager a:last-child{text-align:right}
+.pager strong{font-family:var(--display);font-weight:var(--h-weight);letter-spacing:var(--h-spacing);font-size:18px}
+
+/* world details */
+body[data-p="encapsulation"] .shots::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;
+  background-image:repeating-radial-gradient(circle at 17% 32%,#fff 0 .6px,transparent .6px 3px);mix-blend-mode:overlay}
+body[data-p="encapsulation"] .chapter h2{border-block:1px solid var(--line);padding:10px 26px}
+body[data-p="open-pit-mine"] .proj-head::after{content:"";display:block;height:10px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#151515 14px 28px);margin-top:6px}
+body[data-p="open-pit-mine"] .kv dt{color:var(--accent)}
+body[data-p="fragroom-desert"]{--shot-gap:6px}
+body[data-p="fragroom-desert"] .chapter h2{background:var(--accent);color:var(--accent-ink);padding:6px 16px;transform:rotate(-1.5deg)}
+body[data-p="fragroom-scifi"] .proj-head h1,body[data-p="fragroom-scifi"] .chapter h2{color:#eaf9ff;text-shadow:0 0 18px rgba(56,224,255,.55),0 0 2px rgba(56,224,255,.9)}
+body[data-p="fragroom-scifi"] .shot img{border-bottom:1px solid rgba(56,224,255,.25)}
+body[data-p="fragroom-art-deco"]{--shot-gap:10px}
+body[data-p="fragroom-art-deco"] .shots{padding-inline:max(16px,4vw)}
+body[data-p="fragroom-art-deco"] .shot{border:1px solid var(--accent);padding:6px;outline:1px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:3px}
+body[data-p="fragroom-art-deco"] .proj-head{text-align:center;justify-items:center}
+body[data-p="fragroom-art-deco"] .proj-info{text-align:left}
+body[data-p="fragroom-art-deco"] .proj-head h1::after,body[data-p="fragroom-art-deco"] .chapter h2::after{content:"";display:block;margin:14px auto 0;width:120px;height:14px;
+  background:linear-gradient(var(--accent),var(--accent)) center/100% 1px no-repeat,linear-gradient(var(--accent),var(--accent)) center 10px/60% 1px no-repeat}
+body[data-p="sky-pirates"]{--shot-gap:12px}
+body[data-p="sky-pirates"] .shots{padding-inline:max(16px,3vw)}
+body[data-p="sky-pirates"] .shot img{border-radius:14px}
+body[data-p="sky-pirates"] .chapter h2{font-size:clamp(28px,4vw,44px)}
+body[data-p="sketches"]{--shot-gap:28px}
+body[data-p="sketches"] .shots{padding-inline:max(16px,6vw);padding-block:12px}
+body[data-p="sketches"] .shot img{box-shadow:0 18px 40px -22px rgba(0,0,0,.6)}
+body[data-p="sketches"] .pair{align-items:flex-start}
+.seal{display:inline-grid;place-items:center;width:58px;height:58px;background:var(--accent);color:#fff;font:700 30px/1 "Noto Serif SC","Songti SC","SimSun",serif;border-radius:4px;transform:rotate(-4deg);box-shadow:inset 0 0 0 3px rgba(255,255,255,.25)}
+body[data-p="sketches"] .proj-head{position:relative}
+body[data-p="sketches"] .proj-head .seal{position:absolute;right:var(--gutter-r);top:44px}
+body[data-p="sketches"] .proj-head h1{font-style:italic}
+body[data-p="sketches"] .top{background:color-mix(in srgb,var(--bg) 92%,transparent)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:40;background:rgba(6,7,9,.96);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-height:86vh;width:auto;max-width:100%}
+.lb-bar{position:absolute;left:0;right:0;bottom:max(12px,env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:10px;align-items:center}
+.lb-bar button,.lb-close{font-family:var(--mono);font-size:12px;background:#14171c;color:#e9e6df;border:1px solid #2a2f37;padding:8px 12px;cursor:pointer}
+.lb-bar .mono{color:#9aa0a8}
+.lb-close{position:absolute;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Liza <span>Lomakina</span></a>
+    <div class="right">
+      <nav class="nav" aria-label="Sections" id="nav"></nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+        <button id="lang-ru" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" id="lbClose">✕ Esc</button>
+  <img id="lbImg" alt="">
+  <div class="lb-bar"><button id="lbPrev">←</button><span class="mono" id="lbCount"></span><button id="lbNext">→</button></div>
+</div>
+
+<script>
+const UI = {
+  en:{work:"Work",scale:"0.27 scale",about:"About",contact:"Contact",
+    role:"Environment and level artist in Unreal Engine 5. I build playable spaces from blockout to final light.",
+    open:"Open to work",city:"Moscow",shipped:"Shipped: Fragroom VR",
+    selected:"Selected work",projects:n=>`${n} projects`,
+    curT:"Now: an unannounced MMORPG",curTag:"Under NDA · no screenshots yet",
+    lead:"A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain. I work on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work.",
+    probT:"Problems I ran into and how I solved them",colP:"Problem",colS:"What I did",
+    note:"Shadows and performance are handled by the studio's technical artist.",
+    aboutP:["I build playable game spaces, from blockout and layout to lighting, set dressing and final polish. I care about environments that read well in gameplay and look good in screenshots: clear composition, readable paths, mood through light.",
+      "Right now I work on an unannounced MMORPG with a huge open world.",
+      "Before that I designed and dressed PvP arenas for Fragroom, a released VR shooter, and assembled every level of the horror game Encapsulation."],
+    kv:[["Engine","Unreal Engine 5 / 4"],["Tools","PCG, Blender, Photoshop, Python"],["Focus","Level art, layout, lighting, set dressing"],["Format","Full-time, contract or freelance (registered self-employed)"]],
+    nda:"Details and screenshots are under NDA until the game is announced.",ndaShort:"Under NDA",
+    email:"Email",tg:"Telegram",copy:"Copy",copied:"Copied",selectCopy:"Select & copy",jams:"itch.io · game jams",
+    all:"← All work",prev:"← Previous",next:"Next →"},
+  ru:{work:"Работы",scale:"Масштаб 0.27",about:"Обо мне",contact:"Контакты",
+    role:"Environment и level artist в Unreal Engine 5. Собираю играбельные пространства от блокаута до финального света.",
+    open:"Открыта к предложениям",city:"Москва",shipped:"Вышла игра: Fragroom VR",
+    selected:"Избранные работы",projects:n=>`${n} проектов`,
+    curT:"Сейчас: неанонсированная MMORPG",curTag:"Под NDA · скриншотов пока нет",
+    lead:"Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта. Делаю блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением.",
+    probT:"С какими проблемами столкнулась и как решала",colP:"Проблема",colS:"Что сделала",
+    note:"Тени и производительность ведёт тех-артист студии.",
+    aboutP:["Собираю играбельные пространства: от блокаута и лейаута до света, наполнения и финальной полировки. Мне важно, чтобы окружение читалось в геймплее и хорошо выглядело на скриншотах: понятная композиция, читаемые маршруты, настроение через свет.",
+      "Сейчас работаю над неанонсированной MMORPG с огромным открытым миром.",
+      "До этого проектировала и наполняла PvP-арены для вышедшего VR-шутера Fragroom и собрала все уровни хоррора Encapsulation."],
+    kv:[["Движок","Unreal Engine 5 / 4"],["Инструменты","PCG, Blender, Photoshop, Python"],["Фокус","Level art, лейаут, свет, наполнение"],["Формат","Штат, контракт или фриланс (есть самозанятость)"]],
+    nda:"Подробности и скриншоты закрыты NDA до анонса игры.",ndaShort:"Под NDA",
+    email:"Почта",tg:"Telegram",copy:"Копировать",copied:"Скопировано",selectCopy:"Выделено",jams:"itch.io · геймджемы",
+    all:"← Все работы",prev:"← Назад",next:"Дальше →"}
+};
+
+const ISSUES = {
+  en:[["A huge, empty world","21 km of terrain can't be dressed by hand, and large areas read as empty.","Moved population to PCG: zone-based vegetation with density and clumping controls, so whole regions fill consistently and stay editable."],
+    ["Placing camps and landmarks","Dozens of camps and bases have to sit correctly on uneven terrain.","Wrote Python editor tools that place camps and fit them to the landscape in one click."],
+    ["Non-standard scale","The character is much smaller than usual, so assets, particles and materials from packs don't fit out of the box.","Re-scaled and re-fitted props, buildings and VFX by hand to one consistent scale."],
+    ["Terrain and roads","Landscape resolution and road widths built for normal scale broke: polygons stretched and showed.","Re-tuned terrain resolution and road sizes for the game's scale."],
+    ["Textures and tiling","Smaller meshes lower texel density and make tiling repeats obvious.","Increased texture sizes and re-tuned tiling to hide repetition."]],
+  ru:[["Огромный пустой мир","21 км ландшафта не заполнить вручную, большие участки выглядят пустыми.","Перевела заполнение на PCG: растительность по зонам с настройками плотности и кучности, целые регионы заполняются равномерно и остаются редактируемыми."],
+    ["Расстановка лагерей и ориентиров","Десятки лагерей и баз нужно правильно посадить на неровный рельеф.","Написала Python-тулзы, которые расставляют лагеря и сажают их на ландшафт в один клик."],
+    ["Нестандартный масштаб","Персонаж намного меньше обычного, поэтому ассеты, партиклы и материалы из паков не подходят из коробки.","Вручную перескейлила и подогнала пропсы, здания и VFX к единому масштабу."],
+    ["Ландшафт и дороги","Разрешение ландшафта и ширина дорог под обычный масштаб ломались: полигоны плющило и они палились.","Подобрала разрешение ландшафта и размеры дорог под масштаб игры."],
+    ["Текстуры и тайлинг","У уменьшенных мешей падает плотность текселей, повторы тайлинга бросаются в глаза.","Увеличила текстуры и перенастроила тайлинг, чтобы спрятать повторы."]]
+};
+
+const L = (o)=> (o && typeof o==="object" && !Array.isArray(o) && ("en" in o)) ? o[lang] : o;
+
+const P = [
+  {id:"mmorpg",nda:true,short:"MMORPG · NDA",title:{en:"Unannounced MMORPG",ru:"Неанонсированная MMORPG"},sub:{en:"Huge open world · under NDA",ru:"Огромный открытый мир · под NDA"},
+   kind:{en:"Current studio project",ru:"Текущий проект студии"},engine:"UE5",
+   tag:{en:"Zone blockout · camps · rivers · PCG vegetation · environment tools",ru:"Блокаут зон · лагеря · реки · PCG-растительность · тулзы"},
+   cf:"Unbounded,sans-serif",cw:700,cs:"0",c:"#e6a34f",
+   text:{en:["A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain.","I work on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work."],
+         ru:["Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта.","Делаю блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением."]},
+   facts:{en:[["Role","Environment / level art, PCG, environment tools"],["Engine","Unreal Engine 5"],["World","21 km of terrain"],["Status","In development"]],ru:[["Роль","Окружение и уровни, PCG, тулзы для окружения"],["Движок","Unreal Engine 5"],["Мир","21 км ландшафта"],["Статус","В разработке"]]},
+   blocks:[]},
+  {id:"encapsulation",short:"Encapsulation",title:"Encapsulation",sub:{en:"Инкапсуляция",ru:"Инкапсуляция"},
+   kind:{en:"Psychological horror · game jam, then post-jam",ru:"Психологический хоррор · геймджем и доработка"},engine:"UE5",
+   cover:"img/enc_01.jpg",tag:{en:"Level art · lighting · set dressing",ru:"Уровни · свет · наполнение"},
+   cf:"'Old Standard TT',serif",cw:400,cs:".12em",c:"#c8342b",
+   route:{en:["Ship in a bottle","Bunker","Hospital","Limbo","Escape from cyberspace"],ru:["Корабль в бутылке","Бункер","Госпиталь","Лимбо","Выход из киберпространства"]},
+   text:{en:["A psychological horror game made for a game jam by Team Kimberlite and later developed further.","The core idea is one world inside another. The player starts in a world that seems clear and logical, then gradually realises its borders are far wider than they looked. What if our reality is part of another one?","The jam theme was “Enclosed space”. Each level is a closed world the player breaks out of into the next: from a ship in a bottle into a bunker, from the bunker's capsule into a hospital, from the hospital into Limbo, and finally out of cyberspace.","I was the level designer and level artist and built every level: the ship cabins and deck, the bunker behind the sealed bulkhead, the hospital and the final Limbo level. Layout, set dressing, lighting and atmosphere.","Assets come from marketplace packs; I edited many of them and rebuilt their materials so everything shares one look and the game's mood."],
+         ru:["Психологический хоррор, сделанный командой Team Kimberlite на геймджеме и доработанный после.","Главная идея — один мир в другом. Игрок оказывается в мире, который кажется понятным и логичным, но по мере прохождения понимает, что границы реальности гораздо шире, чем казалось. Что, если наша реальность — часть другой?","Тема джема — «Замкнутое пространство». Каждый уровень — закрытый мир, из которого игрок вырывается в следующий: из корабля в бутылке в бункер, из капсулы бункера в госпиталь, из госпиталя в Лимбо и в конце — из киберпространства.","Я была левел-дизайнером и левел-артистом и сделала все уровни: каюты и палубу корабля, бункер за гермодверью, больницу и финальный уровень Лимбо. Лейаут, наполнение, свет и атмосфера.","Ассеты из паков маркетплейса; многие я отредактировала и пересобрала их материалы, чтобы всё было в одном стиле и настроении игры."]},
+   facts:{en:[["Role","Level designer & level artist: all levels, lighting"],["Engine","Unreal Engine 5"],["Team","Team Kimberlite"]],ru:[["Роль","Левел-дизайнер и левел-артист: все уровни, свет"],["Движок","Unreal Engine 5"],["Команда","Team Kimberlite"]]},
+   link:{href:"https://sadoxary.itch.io/encapsulation",label:{en:"Play the jam build on itch.io ↗",ru:"Джем-версия на itch.io ↗"}},
+   link2:{href:"https://t.me/teamkimberlite",label:{en:"Team Kimberlite on Telegram ↗",ru:"Team Kimberlite в Telegram ↗"}},
+   blocks:[
+     {n:"I",h:{en:"Ship in a bottle",ru:"Корабль в бутылке"},p:{en:"The first enclosure: a ship sealed inside a bottle. Old wooden cabins and a night deck lit by moonlight and candles, every prop placed to hint at the story.",ru:"Первое замкнутое пространство — корабль внутри бутылки. Старые деревянные каюты и ночная палуба в свете луны и свечей, каждый предмет подсказывает историю."}},
+     {img:"enc_01"},{img:"enc_02"},{pair:["enc_03","enc_04"]},{pair:["enc_05","enc_06"]},
+     {n:"II",h:{en:"Bunker",ru:"Бункер"},p:{en:"Out of the bottle and into a bunker. Riveted steel, hazard stripes and work lights; red alarm light against cold blue fill keeps the player on edge. The way out is a capsule.",ru:"Из бутылки — в бункер. Клёпаная сталь, предупреждающие полосы и прожекторы; красный аварийный свет против холодного синего держит игрока в напряжении. Выход — через капсулу."}},
+     {img:"enc_07"},{img:"enc_08"},{pair:["enc_09","enc_10"]},
+     {n:"III",h:{en:"Hospital",ru:"Госпиталь"},p:{en:"From the bunker's capsule into a hospital: cold fluorescent light, clinical green trim and empty corridors, a deliberate contrast to the warm candle-lit ship.",ru:"Из капсулы бункера — в госпиталь: холодные лампы дневного света, больничная зелень и пустые коридоры как контраст тёплому кораблю со свечами."}},
+     {img:"enc_11"},{img:"enc_12"},
+     {n:"IV",h:{en:"Limbo",ru:"Лимбо"},p:{en:"The last enclosure: a dream-like void of dense fog, one light source and floating debris. From here the player breaks out of cyberspace.",ru:"Последнее замкнутое пространство: сновидческая пустота, густой туман, один источник света и парящие обломки. Отсюда игрок вырывается из киберпространства."}},
+     {img:"enc_13"}]},
+  {id:"open-pit-mine",short:"Open-Pit Mine",title:{en:"Open-Pit Mine",ru:"Карьер"},sub:{en:"UE5 environment",ru:"Окружение в UE5"},
+   kind:{en:"Realistic environment",ru:"Реалистичное окружение"},engine:"UE5",
+   cover:"img/mine_01.jpg",tag:{en:"Landscape · decals · overcast lighting",ru:"Ландшафт · декали · пасмурный свет"},
+   cf:"Oswald,sans-serif",cw:700,cs:".02em",c:"#f2c21b",
+   text:{en:["A realistic open-pit mine built in Unreal Engine 5 with a small team. The goal was a large industrial landscape with believable terrain erosion and overcast light.","I did the landscape sculpting, decals, foliage, lighting and composition. Realistic assets, including the haul truck, came from the marketplace; the work is turning them into one coherent scene."],
+         ru:["Реалистичный открытый карьер в Unreal Engine 5, небольшая команда. Задача — большой индустриальный пейзаж с правдоподобной эрозией и пасмурным светом.","На мне скульпт ландшафта, декали, растительность, свет и композиция. Реалистичные ассеты, включая самосвал, с маркетплейса; работа в том, чтобы собрать из них цельную сцену."]},
+   facts:{en:[["Role","Landscape, decals, foliage, lighting"],["Engine","Unreal Engine 5, Lumen"],["Time","~5 weeks"]],ru:[["Роль","Ландшафт, декали, растительность, свет"],["Движок","Unreal Engine 5, Lumen"],["Срок","~5 недель"]]},
+   blocks:[{img:"mine_01"},{img:"mine_02"},{pair:["mine_03","mine_04"]},{pair:["mine_05","mine_06"]},
+     {h:{en:"Video",ru:"Видео"},p:""},{video:"NZNwz3-hgWL",page:"https://www.behance.net/gallery/242017175/BLZ"}]},
+  {id:"fragroom-desert",short:"Fragroom · Desert",title:"Fragroom VR",sub:{en:"Desert PvP arena",ru:"Пустынная PvP-арена"},
+   kind:{en:"Released VR PvP shooter",ru:"Вышедший VR PvP-шутер"},engine:"UE5",
+   cover:"img/desert_01.jpg",tag:{en:"Level design · level art · lighting",ru:"Левел-дизайн · левел-арт · свет"},
+   cf:"'Russo One',sans-serif",cw:400,cs:".03em",c:"#e08a3c",
+   text:{en:["A stylized desert PvP map for Fragroom, a released VR arena shooter. Team project.","Level design (layout, cover placement, sightlines, spawn balance) plus level art and lighting. Hero props and complex textures were made by the team's 3D artist; I handled assembly, set dressing and the final look of the map."],
+         ru:["Стилизованная пустынная PvP-карта для вышедшего VR-шутера Fragroom. Командный проект.","Левел-дизайн (лейаут, укрытия, линии обзора, баланс спавнов), левел-арт и свет. Основные пропсы и сложные текстуры делал 3D-художник команды; на мне сборка, наполнение и финальный вид карты."]},
+   facts:{en:[["Role","Level design, level art, lighting"],["Engine","Unreal Engine 5"],["Status","Released on Steam, VR. The build with my maps is no longer live."]],ru:[["Роль","Левел-дизайн, левел-арт, свет"],["Движок","Unreal Engine 5"],["Статус","Вышла в Steam, VR. Версия с моими картами больше не доступна."]]},
+   blocks:[{img:"desert_01"},{img:"desert_02"},{pair:["desert_03","desert_04"]},
+     {h:{en:"Asset breakdown",ru:"Ассеты"},p:{en:"Props, modular pieces and textures by the team's 3D artist, assembled, dressed and lit in the level by me.",ru:"Пропсы, модульные элементы и текстуры от 3D-художника команды; собраны, расставлены и освещены в уровне мной."}},
+     {pair:["desert_05","desert_06"]}]},
+  {id:"fragroom-scifi",short:"Fragroom · Sci-fi",title:"Fragroom VR",sub:{en:"Sci-fi PvP arena",ru:"Sci-fi PvP-арена"},
+   kind:{en:"Released VR PvP shooter",ru:"Вышедший VR PvP-шутер"},engine:"UE4",
+   cover:"img/scifi_01.jpg",tag:{en:"Layout · modular kit · neon lighting",ru:"Лейаут · модульный кит · неон"},
+   cf:"Jura,sans-serif",cw:700,cs:".1em",c:"#38e0ff",
+   text:{en:["A sci-fi PvP arena for Fragroom. Team project.","Level design and level art: layout, modular kit assembly, lighting and post-process. 3D models and complex textures by the team's 3D artist.","VR constraints shaped the space: comfortable movement distances, cover height for standing players, readable silhouettes at close range."],
+         ru:["Sci-fi PvP-арена для Fragroom. Командный проект.","Левел-дизайн и левел-арт: лейаут, сборка модульного кита, свет и пост-процесс. 3D-модели и сложные текстуры делал 3D-художник команды.","Пространство определяли ограничения VR: комфортные дистанции перемещения, высота укрытий для стоящего игрока, читаемые силуэты вблизи."]},
+   facts:{en:[["Role","Level design, level art, lighting"],["Engine","Unreal Engine 4"],["Status","Released on Steam, VR. The build with my maps is no longer live."]],ru:[["Роль","Левел-дизайн, левел-арт, свет"],["Движок","Unreal Engine 4"],["Статус","Вышла в Steam, VR. Версия с моими картами больше не доступна."]]},
+   blocks:[{img:"scifi_01"},{pair:["scifi_02","scifi_03"]},{pair:["scifi_04","scifi_05"]},{img:"scifi_06"},
+     {h:{en:"Process",ru:"Процесс"},p:{en:"Mood sketches and layout sheets.",ru:"Скетчи настроения и листы разметки."}},
+     {pair:["scifi_07","scifi_08"]}]},
+  {id:"fragroom-art-deco",short:"Fragroom · Art Deco",title:"Fragroom VR",sub:{en:"Art Deco PvP arena",ru:"PvP-арена в стиле ар-деко"},
+   kind:{en:"Released VR PvP shooter",ru:"Вышедший VR PvP-шутер"},engine:"UE4",
+   cover:"img/deco_01.jpg",tag:{en:"Layout · set dressing · lighting",ru:"Лейаут · наполнение · свет"},
+   cf:"'Poiret One',serif",cw:400,cs:".14em",c:"#d4af5a",
+   text:{en:["An Art Deco PvP arena for Fragroom. Team project.","Level design and level art: layout, modular kit assembly, lighting and post-process. 3D models and complex textures by artstation.com/ori1da."],
+         ru:["PvP-арена в стиле ар-деко для Fragroom. Командный проект.","Левел-дизайн и левел-арт: лейаут, сборка модульного кита, свет и пост-процесс. 3D-модели и сложные текстуры: artstation.com/ori1da."]},
+   facts:{en:[["Role","Level design, level art, lighting"],["Engine","Unreal Engine 4"],["3D models","ori1da"]],ru:[["Роль","Левел-дизайн, левел-арт, свет"],["Движок","Unreal Engine 4"],["3D-модели","ori1da"]]},
+   blocks:[{img:"deco_01"},{img:"deco_02"},{pair:["deco_03","deco_04"]},
+     {h:{en:"Process",ru:"Процесс"},p:{en:"Style and prop sheets for the Art Deco kit.",ru:"Листы стиля и пропсов для кита ар-деко."}},
+     {pair:["deco_05","deco_06"]}]},
+  {id:"sky-pirates",short:"Sky Pirates",title:"Sky Pirates",sub:{en:"VR arena game",ru:"VR-арена"},
+   kind:{en:"VR arena game",ru:"VR-арена"},engine:"UE5",
+   cover:"img/sky_01.jpg",tag:{en:"Lobby · three island levels",ru:"Лобби · три острова"},
+   cf:"'Kelly Slab',serif",cw:400,cs:"0",c:"#ff8f7a",
+   text:{en:["A VR arena game with a lobby, character selection and three island levels. Team project.","Level design and level art for all levels and the character selection scene, plus lighting. Characters and complex assets by the team's 3D artist."],
+         ru:["VR-арена с лобби, выбором персонажа и тремя уровнями-островами. Командный проект.","Левел-дизайн и левел-арт всех уровней и сцены выбора персонажа, свет. Персонажи и сложные ассеты делал 3D-художник команды."]},
+   facts:{en:[["Role","Level design, level art, lighting"],["Engine","Unreal Engine 5"],["Levels","Lobby + 3 islands"]],ru:[["Роль","Левел-дизайн, левел-арт, свет"],["Движок","Unreal Engine 5"],["Уровни","Лобби + 3 острова"]]},
+   blocks:[{h:{en:"Lobby",ru:"Лобби"},p:""},{img:"sky_01"},{h:{en:"Islands",ru:"Острова"},p:{en:"Open world, cave and treasure islands.",ru:"Открытый мир, остров с пещерой и остров сокровищ."}},{img:"sky_02"},{pair:["sky_03","sky_04"]},{pair:["sky_05","sky_06"]},
+     {h:{en:"Gameplay video",ru:"Геймплей"},p:""},{video:"No9Rb_HE32R",page:"https://www.behance.net/gallery/236322115/Sky-Pirates"}]},
+  {id:"sketches",short:"Sketches",title:{en:"Sketches & Concepts",ru:"Скетчи и концепты"},sub:{en:"Characters · creatures · VFX",ru:"Персонажи · существа · VFX"},
+   kind:{en:"Concept art",ru:"Концепт-арт"},engine:"Photoshop",
+   cover:"img/sketch_01.jpg",tag:{en:"Characters · creatures · VFX",ru:"Персонажи · существа · VFX"},
+   cf:"Cormorant,serif",cw:700,cs:"0",c:"#b8322a",seal:"猫",
+   text:{en:["Character, creature and VFX concepts in an East Asian mood: illustrations, cat studies and a lightning explosion breakdown."],ru:["Концепты персонажей, существ и VFX в восточном настроении: иллюстрации, этюды котов и раскадровка взрыва-молнии."]},
+   facts:{en:[["Tools","Adobe Photoshop"]],ru:[["Инструменты","Adobe Photoshop"]]},
+   blocks:[{img:"sketch_01"},{pair:["sketch_02","sketch_03"]},{img:"sketch_04"}]}
+];
+
+P.push(P.shift()); // NDA project goes last
+let lang="en";
+try{ const s=localStorage.getItem("lang"); if(s==="ru"||s==="en") lang=s; else if((navigator.language||"").startsWith("ru")) lang="ru"; }catch(_){ if((navigator.language||"").startsWith("ru")) lang="ru"; }
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const t=k=>UI[lang][k];
+
+function nav(){
+  $("#nav").innerHTML=["work","about","contact"].map(k=>`<a href="#" data-go="${k}">${t(k)}</a>`).join("");
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  document.documentElement.lang=lang;
+}
+
+function home(){
+  const card=(p,i,cls)=>`<a class="card ${cls}${p.nda?" nda":""}" href="#${p.id}" style="--c:${p.c};--cf:${p.cf};--cw:${p.cw};--cs:${p.cs}"><span class="idx">${String(i+1).padStart(2,"0")} · ${esc(p.engine)}</span>${p.nda?`<div class="nda-cover"><span>NDA</span><em>${t("ndaShort")}</em></div>`:`<img src="${p.cover}" alt="${esc(L(p.title))}" ${i?'loading="lazy"':''}>`}<div class="meta"><span class="label">${esc(L(p.kind))}</span><h3>${esc(L(p.title))}${p.id.startsWith("fragroom")?` · ${esc(L(p.sub))}`:""}</h3><p>${esc(L(p.tag))}</p></div></a>`;
+  return `
+  <div class="hero">
+    <img class="hero-img" src="img/enc_02.jpg" alt="Encapsulation">
+    <div class="hero-shade"></div>
+    <span class="frame-tag">Encapsulation · UE5 · Lumen</span>
+    <div class="hero-copy"><div class="wrap">
+      <h1>Liza Lomakina</h1>
+      <p class="role">${t("role")}</p>
+      <div class="chips"><span class="chip on">${t("open")}</span><span class="chip">${t("city")}</span><span class="chip">${t("shipped")}</span></div>
+    </div></div>
+  </div>
+  <section id="work"><div class="wrap">
+    <div class="sec-head"><h2>${t("selected")}</h2><span class="mono">${t("projects")(P.length)}</span></div>
+    <div class="grid">${P.map((p,i)=>card(p,i,(i===0||p.nda)?"wide":"")).join("")}</div>
+  </div></section>
+  <section id="about"><div class="wrap">
+    <div class="sec-head"><h2>${t("about")}</h2></div>
+    <div class="about-grid">
+      <div>${t("aboutP").map(x=>`<p>${x}</p>`).join("")}</div>
+      <dl class="kv">${t("kv").map(([k,v])=>`<div><dt class="label">${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+    </div>
+  </div></section>
+  <section id="contact" style="border-top:1px solid var(--line)"><div class="wrap">
+    <div class="sec-head"><h2>${t("contact")}</h2></div>
+    <div style="display:grid;gap:14px">
+      <div class="contact-row"><span class="label">${t("email")}</span><span class="sel" id="em">sadoxary@mail.ru</span><button class="copy" data-copy="em">${t("copy")}</button></div>
+      <div class="contact-row"><span class="label">${t("tg")}</span><span class="sel" id="tgv">@Sadoxary</span><button class="copy" data-copy="tgv">${t("copy")}</button></div>
+    </div>
+    <div class="links">
+      <a href="https://www.behance.net/kl373" target="_blank" rel="noopener">Behance</a>
+      <a href="https://sadoxary.itch.io" target="_blank" rel="noopener">${t("jams")}</a>
+      <a href="https://t.me/Sadoxary" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div></section>`;
+}
+
+function shot(n,i,alt){ return `<button class="shot" data-shot="${i}" aria-label="${esc(alt)} ${i+1}"><img src="img/${n}.jpg" alt="${esc(alt)}" loading="lazy" decoding="async"></button>`; }
+
+function project(p){
+  const i=P.indexOf(p), prev=P[(i-1+P.length)%P.length], next=P[(i+1)%P.length];
+  const shots=[]; const title=L(p.title);
+  const body=p.blocks.map(b=>{
+    if(b.h!==undefined) return `<div class="chapter wrap">${b.n?`<span class="num">${b.n}</span>`:""}<h2>${esc(L(b.h))}</h2>${b.p?`<p>${esc(L(b.p))}</p>`:""}</div>`;
+    if(b.img){ shots.push(b.img); return shot(b.img,shots.length-1,title); }
+    if(b.video){
+      const embed=!/claude|anthropic/.test(location.hostname);
+      return embed
+        ? `<div class="video"><iframe src="https://www-ccv.adobe.io/v1/player/ccv/${b.video}/embed?api_key=behance1&bgcolor=%23191919" title="${esc(title)} video" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div>`
+        : `<div class="wrap"><a class="video-link" href="${b.page}" target="_blank" rel="noopener">${lang==="ru"?"▶ Смотреть видео на Behance ↗":"▶ Watch the video on Behance ↗"}</a></div>`;
+    }
+    if(b.pair){ const a=shots.length; shots.push(...b.pair); return `<div class="pair">${b.pair.map((n,k)=>shot(n,a+k,title)).join("")}</div>`; }
+    return "";
+  }).join("");
+  window.__shots=shots;
+  return `
+  <div class="wrap proj-head">
+    <a class="back" href="#">${t("all")}</a>
+    <span class="label">${esc(L(p.kind))} · ${esc(p.engine)}</span>
+    <h1>${esc(title)}${p.sub?`<small>${esc(L(p.sub))}</small>`:""}</h1>
+    ${p.seal?`<span class="seal" aria-hidden="true">${p.seal}</span>`:""}
+    ${p.route?`<ol class="route">${L(p.route).map(r=>`<li>${esc(r)}</li>`).join("")}</ol>`:""}
+    <div class="proj-info">
+      <div>${L(p.text).map(x=>`<p>${esc(x)}</p>`).join("")}${[p.link,p.link2].filter(Boolean).map(l=>`<p><a class="ext" href="${l.href}" target="_blank" rel="noopener">${esc(L(l.label))}</a></p>`).join("")}</div>
+      <dl class="kv">${L(p.facts).map(([k,v])=>`<div><dt class="label">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    </div>
+  </div>
+  ${p.nda?`<div class="wrap now">
+      <p class="nda-note">${t("nda")}</p>
+      <span class="label">${t("probT")}</span>
+      <div class="ps-head" aria-hidden="true"><span class="label">${t("colP")}</span><span class="label">${t("colS")}</span></div>
+      <ul class="ps">${ISSUES[lang].map(([k,a,s])=>`<li><div><strong>${k}</strong><p>${a}</p></div><p class="sol">${s}</p></li>`).join("")}</ul>
+      <p class="note">${t("note")}</p>
+    </div>`:`<div class="shots">${body}</div>`}
+  <div class="wrap pager">
+    <a href="#${prev.id}"><span class="label">${t("prev")}</span><strong>${esc(prev.short)}</strong></a>
+    <a href="#${next.id}"><span class="label">${t("next")}</span><strong>${esc(next.short)}</strong></a>
+  </div>`;
+}
+
+function fitPairs(){
+  document.querySelectorAll(".pair img").forEach(im=>{
+    const set=()=>{ if(im.naturalWidth) im.parentElement.style.flex=`${im.naturalWidth/im.naturalHeight} 1 0`; };
+    im.complete?set():im.addEventListener("load",set,{once:true});
+  });
+}
+
+function render(keepScroll){
+  const id=location.hash.slice(1);
+  const p=P.find(x=>x.id===id);
+  document.body.dataset.p=p?p.id:"";
+  nav();
+  $("#app").innerHTML=p?project(p):home();
+  document.title=p?`${L(p.title)} · Liza Lomakina`:"Liza Lomakina Portfolio";
+  fitPairs();
+  if(p&&!keepScroll) window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",()=>render(false));
+render(false);
+
+document.addEventListener("click",e=>{
+  const lb=e.target.closest("[data-lang]");
+  if(lb){ lang=lb.dataset.lang; try{localStorage.setItem("lang",lang)}catch(_){} render(true); return; }
+  const go=e.target.closest("[data-go]");
+  if(go){ e.preventDefault(); const target=go.dataset.go; const scroll=()=>document.getElementById(target)?.scrollIntoView({behavior:"smooth"});
+    if(location.hash&&location.hash!=="#"){ history.replaceState(null,"",location.pathname+location.search); render(false); setTimeout(scroll,30);} else scroll(); return; }
+  const c=e.target.closest("[data-copy]");
+  if(c){ const el=document.getElementById(c.dataset.copy);
+    const done=ok=>{c.textContent=ok?t("copied"):t("selectCopy"); setTimeout(()=>c.textContent=t("copy"),1600)};
+    try{ navigator.clipboard.writeText(el.textContent).then(()=>done(true),()=>{selectText(el);done(false)}); }catch(_){ selectText(el); done(false); }
+    return; }
+  const s=e.target.closest("[data-shot]");
+  if(s) openLb(+s.dataset.shot);
+});
+function selectText(el){ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+let cur=0;
+function openLb(i){ cur=i; showLb(); $("#lb").hidden=false; $("#lbClose").focus(); }
+function showLb(){ const sh=window.__shots||[]; if(!sh.length) return; cur=(cur+sh.length)%sh.length; $("#lbImg").src=`img/${sh[cur]}.jpg`; $("#lbCount").textContent=`${cur+1} / ${sh.length}`; }
+function closeLb(){ $("#lb").hidden=true; }
+$("#lbClose").onclick=closeLb; $("#lbPrev").onclick=()=>{cur--;showLb()}; $("#lbNext").onclick=()=>{cur++;showLb()};
+$("#lb").addEventListener("click",e=>{ if(e.target.id==="lb") closeLb(); });
+document.addEventListener("keydown",e=>{ if($("#lb").hidden) return; if(e.key==="Escape") closeLb(); if(e.key==="ArrowRight"){cur++;showLb()} if(e.key==="ArrowLeft"){cur--;showLb()} });
+</script>
+</body>
+</html>
