@@ -166,6 +166,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 .shot:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .shot img{width:100%;height:auto}
 .pair{display:flex;gap:var(--shot-gap,0px)}
+.cap{margin:0;padding:10px var(--gutter-r) 18px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);text-align:center}
 .video{position:relative;aspect-ratio:16/9;max-width:100%;background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-link{display:block;text-align:center;text-decoration:none;padding:36px 16px;border:1px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:14px;letter-spacing:.06em;margin-bottom:24px}
@@ -319,7 +320,7 @@ const P = [
      {n:"II",h:{en:"Bunker",ru:"Бункер"},p:{en:"Out of the bottle and into a bunker. Riveted steel, hazard stripes and work lights; red alarm light against cold blue fill keeps the player on edge. The way out is a capsule.",ru:"Из бутылки — в бункер. Клёпаная сталь, предупреждающие полосы и прожекторы; красный аварийный свет против холодного синего держит игрока в напряжении. Выход — через капсулу."}},
      {img:"enc_07"},{img:"enc_08"},{pair:["enc_09","enc_10"]},
      {n:"III",h:{en:"Hospital",ru:"Госпиталь"},p:{en:"From the bunker's capsule into a hospital: cold fluorescent light, clinical green trim and empty corridors, a deliberate contrast to the warm candle-lit ship.",ru:"Из капсулы бункера — в госпиталь: холодные лампы дневного света, больничная зелень и пустые коридоры как контраст тёплому кораблю со свечами."}},
-     {img:"enc_11"},{img:"enc_12"},
+     {img:"enc_11"},{img:"enc_12"},{img:"enc_plan",cap:{en:"Hospital layout, top view without ceilings",ru:"План госпиталя, вид сверху без потолков"}},
      {n:"IV",h:{en:"Limbo",ru:"Лимбо"},p:{en:"The last enclosure: a dream-like void of dense fog, one light source and floating debris. From here the player breaks out of cyberspace.",ru:"Последнее замкнутое пространство: сновидческая пустота, густой туман, один источник света и парящие обломки. Отсюда игрок вырывается из киберпространства."}},
      {img:"enc_13"}]},
   {id:"open-pit-mine",short:"Open-Pit Mine",title:{en:"Open-Pit Mine",ru:"Карьер"},sub:{en:"UE5 environment",ru:"Окружение в UE5"},
@@ -438,7 +439,7 @@ function project(p){
   const shots=[]; const title=L(p.title);
   const body=p.blocks.map(b=>{
     if(b.h!==undefined) return `<div class="chapter wrap">${b.n?`<span class="num">${b.n}</span>`:""}<h2>${esc(L(b.h))}</h2>${b.p?`<p>${esc(L(b.p))}</p>`:""}</div>`;
-    if(b.img){ shots.push(b.img); return shot(b.img,shots.length-1,title); }
+    if(b.img){ shots.push(b.img); return shot(b.img,shots.length-1,title)+(b.cap?`<p class="cap">${esc(L(b.cap))}</p>`:""); }
     if(b.video){
       const embed=!/claude|anthropic/.test(location.hostname);
       return embed
