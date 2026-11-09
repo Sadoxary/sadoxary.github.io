@@ -168,7 +168,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 .pair{display:flex;gap:var(--shot-gap,0px)}
 .cap{margin:0;padding:10px var(--gutter-r) 18px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);text-align:center}
 .video{position:relative;aspect-ratio:16/9;max-width:100%;background:#000}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .video-link{display:block;text-align:center;text-decoration:none;padding:36px 16px;border:1px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:14px;letter-spacing:.06em;margin-bottom:24px}
 .video-link:hover{background:var(--accent);color:var(--accent-ink)}
 .pair .shot{flex:1.78 1 0}
@@ -222,8 +222,7 @@ body[data-p="sketches"] .top{background:color-mix(in srgb,var(--bg) 92%,transpar
 .lb-bar .mono{color:#9aa0a8}
 .lb-close{position:absolute;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
 </style>
-</head>
-<body>
+</head><body>
 
 <header class="top">
   <div class="wrap">
@@ -252,30 +251,30 @@ const UI = {
     role:"Environment and level artist in Unreal Engine 5. I build playable spaces from blockout to final light.",
     open:"Open to work",city:"Moscow",shipped:"Shipped: Fragroom VR",
     selected:"Selected work",projects:n=>`${n} projects`,
-    curT:"Now: an unannounced MMORPG",curTag:"Under NDA · no screenshots yet",
-    lead:"A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain. I work on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work.",
+    curT:"Latest project: an open-world MMORPG",curTag:"Under NDA · not released yet",
+    lead:"A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain. I worked on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work.",
     probT:"Problems I ran into and how I solved them",colP:"Problem",colS:"What I did",
-    note:"Shadows and performance are handled by the studio's technical artist.",
+    note:"Shadows and performance were handled by the studio's technical artist.",
     aboutP:["I build playable game spaces, from blockout and layout to lighting, set dressing and final polish. I care about environments that read well in gameplay and look good in screenshots: clear composition, readable paths, mood through light.",
-      "Right now I work on an unannounced MMORPG with a huge open world.",
+      "Most recently I worked on a large open-world MMORPG that has not been released yet.",
       "Before that I designed and dressed PvP arenas for Fragroom, a released VR shooter, and assembled every level of the horror game Encapsulation."],
     kv:[["Engine","Unreal Engine 5 / 4"],["Tools","PCG, Blender, Photoshop, Python"],["Focus","Level art, layout, lighting, set dressing"],["Format","Full-time, contract or freelance (registered self-employed)"]],
-    nda:"Details and screenshots are under NDA until the game is announced.",ndaShort:"Under NDA",
+    nda:"Details and screenshots are under NDA.",ndaShort:"Under NDA",
     email:"Email",tg:"Telegram",copy:"Copy",copied:"Copied",selectCopy:"Select & copy",jams:"itch.io · game jams",
     all:"← All work",prev:"← Previous",next:"Next →"},
   ru:{work:"Работы",scale:"Масштаб 0.27",about:"Обо мне",contact:"Контакты",
     role:"Environment и level artist в Unreal Engine 5. Собираю играбельные пространства от блокаута до финального света.",
     open:"Открыта к предложениям",city:"Москва",shipped:"Вышла игра: Fragroom VR",
     selected:"Избранные работы",projects:n=>`${n} проектов`,
-    curT:"Сейчас: неанонсированная MMORPG",curTag:"Под NDA · скриншотов пока нет",
-    lead:"Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта. Делаю блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением.",
+    curT:"Последний проект: MMORPG с открытым миром",curTag:"Под NDA · игра ещё не вышла",
+    lead:"Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта. Делала блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением.",
     probT:"С какими проблемами столкнулась и как решала",colP:"Проблема",colS:"Что сделала",
-    note:"Тени и производительность ведёт тех-артист студии.",
+    note:"Тени и производительность вёл тех-артист студии.",
     aboutP:["Собираю играбельные пространства: от блокаута и лейаута до света, наполнения и финальной полировки. Мне важно, чтобы окружение читалось в геймплее и хорошо выглядело на скриншотах: понятная композиция, читаемые маршруты, настроение через свет.",
-      "Сейчас работаю над неанонсированной MMORPG с огромным открытым миром.",
+      "Последний проект, над которым я работала, — большая MMORPG с открытым миром, игра ещё не вышла.",
       "До этого проектировала и наполняла PvP-арены для вышедшего VR-шутера Fragroom и собрала все уровни хоррора Encapsulation."],
     kv:[["Движок","Unreal Engine 5 / 4"],["Инструменты","PCG, Blender, Photoshop, Python"],["Фокус","Level art, лейаут, свет, наполнение"],["Формат","Штат, контракт или фриланс (есть самозанятость)"]],
-    nda:"Подробности и скриншоты закрыты NDA до анонса игры.",ndaShort:"Под NDA",
+    nda:"Подробности и скриншоты закрыты NDA.",ndaShort:"Под NDA",
     email:"Почта",tg:"Telegram",copy:"Копировать",copied:"Скопировано",selectCopy:"Выделено",jams:"itch.io · геймджемы",
     all:"← Все работы",prev:"← Назад",next:"Дальше →"}
 };
@@ -296,12 +295,12 @@ const ISSUES = {
 const L = (o)=> (o && typeof o==="object" && !Array.isArray(o) && ("en" in o)) ? o[lang] : o;
 
 const P = [
-  {id:"mmorpg",nda:true,short:"MMORPG · NDA",title:{en:"Unannounced MMORPG",ru:"Неанонсированная MMORPG"},sub:{en:"Huge open world · under NDA",ru:"Огромный открытый мир · под NDA"},
-   kind:{en:"Current studio project",ru:"Текущий проект студии"},engine:"UE5",
+  {id:"mmorpg",nda:true,short:"MMORPG · NDA",title:{en:"Open-world MMORPG",ru:"MMORPG с открытым миром"},sub:{en:"Huge open world · under NDA",ru:"Огромный открытый мир · под NDA"},
+   kind:{en:"The latest project I worked on",ru:"Последний проект, над которым я работала"},engine:"UE5",
    tag:{en:"Zone blockout · camps · rivers · PCG vegetation · environment tools",ru:"Блокаут зон · лагеря · реки · PCG-растительность · тулзы"},
    cf:"Unbounded,sans-serif",cw:700,cs:"0",c:"#e6a34f",
-   text:{en:["A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain.","I work on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work."],
-         ru:["Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта.","Делаю блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением."]},
+   text:{en:["A large open-world MMORPG in Unreal Engine 5 with 21 km of terrain.","I worked on zone blockout, camps and landmarks, rivers and swamps, ground and foliage dressing, the PCG vegetation system and Python tools for environment work."],
+         ru:["Большая MMORPG с открытым миром на Unreal Engine 5, 21 км ландшафта.","Делала блокаут зон, лагеря и ориентиры, реки и болота, землю и растительность, PCG-систему растительности и Python-тулзы для работы с окружением."]},
    facts:{en:[["Role","Environment / level art, PCG, environment tools"],["Engine","Unreal Engine 5"],["World","21 km of terrain"],["Status","In development"]],ru:[["Роль","Окружение и уровни, PCG, тулзы для окружения"],["Движок","Unreal Engine 5"],["Мир","21 км ландшафта"],["Статус","В разработке"]]},
    blocks:[]},
   {id:"encapsulation",short:"Encapsulation",title:"Encapsulation",sub:{en:"Инкапсуляция",ru:"Инкапсуляция"},
@@ -322,7 +321,9 @@ const P = [
      {n:"III",h:{en:"Hospital",ru:"Госпиталь"},p:{en:"From the bunker's capsule into a hospital: cold fluorescent light, clinical green trim and empty corridors, a deliberate contrast to the warm candle-lit ship.",ru:"Из капсулы бункера — в госпиталь: холодные лампы дневного света, больничная зелень и пустые коридоры как контраст тёплому кораблю со свечами."}},
      {img:"enc_11"},{img:"enc_12"},{img:"enc_plan",cap:{en:"Hospital layout, top view without ceilings",ru:"План госпиталя, вид сверху без потолков"}},
      {n:"IV",h:{en:"Limbo",ru:"Лимбо"},p:{en:"The last enclosure: a dream-like void of dense fog, one light source and floating debris. From here the player breaks out of cyberspace.",ru:"Последнее замкнутое пространство: сновидческая пустота, густой туман, один источник света и парящие обломки. Отсюда игрок вырывается из киберпространства."}},
-     {img:"enc_13"}]},
+     {img:"enc_13"},
+     {h:{en:"Final cutscene",ru:"Финальная кат-сцена"},p:{en:"Leaving Limbo means leaving the gloomy cyberspace itself. The camera moves from the computer to an old TV, and through VHS noise on its screen the player sees what lies beyond: a free, fairy-tale world of castles and floating islands. The VHS effect marks the border between the two realities.",ru:"Выход из Лимбо — это выход из мрачного киберпространства. Камера переходит от компьютера к старому телевизору, и сквозь VHS-помехи на его экране открывается то, что за пределами: свободный сказочный мир с замками и парящими островами. VHS-эффект отмечает границу между двумя реальностями."}},
+     {mp4:"video/enc_limbo.mp4",poster:"img/enc_limbo_poster.jpg"}]},
   {id:"open-pit-mine",short:"Open-Pit Mine",title:{en:"Open-Pit Mine",ru:"Карьер"},sub:{en:"UE5 environment",ru:"Окружение в UE5"},
    kind:{en:"Realistic environment",ru:"Реалистичное окружение"},engine:"UE5",
    cover:"img/mine_01.jpg",tag:{en:"Landscape · decals · overcast lighting",ru:"Ландшафт · декали · пасмурный свет"},
@@ -446,6 +447,7 @@ function project(p){
         ? `<div class="video"><iframe src="https://www-ccv.adobe.io/v1/player/ccv/${b.video}/embed?api_key=behance1&bgcolor=%23191919" title="${esc(title)} video" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div>`
         : `<div class="wrap"><a class="video-link" href="${b.page}" target="_blank" rel="noopener">${lang==="ru"?"▶ Смотреть видео на Behance ↗":"▶ Watch the video on Behance ↗"}</a></div>`;
     }
+    if(b.mp4) return `<div class="video"><video src="${b.mp4}" poster="${b.poster||""}" controls playsinline preload="none" title="${esc(title)} cutscene"></video></div>`;
     if(b.pair){ const a=shots.length; shots.push(...b.pair); return `<div class="pair">${b.pair.map((n,k)=>shot(n,a+k,title)).join("")}</div>`; }
     return "";
   }).join("");
@@ -519,5 +521,4 @@ $("#lbClose").onclick=closeLb; $("#lbPrev").onclick=()=>{cur--;showLb()}; $("#lb
 $("#lb").addEventListener("click",e=>{ if(e.target.id==="lb") closeLb(); });
 document.addEventListener("keydown",e=>{ if($("#lb").hidden) return; if(e.key==="Escape") closeLb(); if(e.key==="ArrowRight"){cur++;showLb()} if(e.key==="ArrowLeft"){cur--;showLb()} });
 </script>
-</body>
-</html>
+</body></html>
